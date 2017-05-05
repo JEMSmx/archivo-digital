@@ -14,6 +14,25 @@ require_once ('./_mobile-detect.php'); $detect = new Mobile_Detect; ?>
   <link rel="apple-touch-icon" href="https://dummyimage.com/50x50/000/fff">
   <link rel="shortcut icon" href="https://dummyimage.com/50x50/000/fff">
 </head>
+<style type="text/css">
+.fancybox-download:before {
+  top: 14px;
+  left: 22px;
+  border-left: 2px solid #fff;
+  height: 12px;
+}
+
+.fancybox-download:after {
+  bottom: 18px;
+  left: 23px;
+  height: 8px;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  width: 8px;
+  background: transparent;
+  transform: rotate(45deg);
+  transform-origin: 0 0;
+}</style>
 <body>
   <div class="container">
    <aside class="sidebar clearfix">

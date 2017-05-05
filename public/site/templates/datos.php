@@ -65,7 +65,17 @@ $('[data-fancybox]').fancybox({
   image : {
     protect: true
   },
- <?php if(!$detect->isMobile() || $detect->isTablet()) { ?> 
+<?php if($user->hasRole('administrator') || $user->hasRole('superuser') || $user->hasRole('manager')){  ?>  
+  onInit : function(instance) {
+    instance.$refs.downloadButton = $('<a download class="fancybox-button fancybox-download"></a>')
+      .appendTo( instance.$refs.buttons );
+  },
+  beforeMove: function(instance, current) {
+    var image_original=current.src.replace(".1200x0","");
+    instance.$refs.downloadButton.attr('href', image_original);
+  },
+  <?php } 
+  if(!$detect->isMobile() || $detect->isTablet()) { ?> 
   caption : function( instance, item ) {
     var originalCaption, caption, link="Etiquetas: ", tags;
     if (item.type === 'image') {
